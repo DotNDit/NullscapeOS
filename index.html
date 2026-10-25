@@ -2,49 +2,70 @@
 <html>
 
   <body class="background">
+
+    <!-- ||||||| -->
+    <!-- Welcome -->
+    <!-- ||||||| -->
     
-    <div class="openbutton" id="welcomeopen">Open</div>
+    <div class="welcome-open" id="welcomeopen">
 
-    <div class="window" id="welcomewindow">
+      <img class="welcome-open-image" src="./images/guy.jpg">
+      <p class="welcome-app-name">Welcome</p>
+
+    </div>
+
+    <div class="welcome-window" id="welcomewindow">
       
-      <div class="windowheader" id="welcomeheader" style="background-color: #fff; border-radius: 15px; padding: 1px; margin: 5px; margin-bottom: 5px; display: flex; height: 30px; width: 720px">
+      <div class="welcome-header" id="welcomeheader">
 
-        <div class="closebutton" id="welcomeclose" style="display: flex; justify-content:center; align-items: center;">
+        <div class="welcome-close" id="welcomeclose">
 
-          <p style="color: white; display: flex; justify-content:center; align-items: center;">x</p>
+          <p style="color: white;">x</p>
+
+        </div>
+
+        <div class="welcome-hide" id="welcomehide">
+
+          <p style="color: white;">-</p>
 
         </div>
 
       </div>
 
-      <div class="windowcontent" style="border-radius: 25px; border: solid; margin: 5px; margin-top: 5px; background-color: #dfdfdf; height: 540px; width: 720px; z-index:1">  
+      <div class="welcome-content">  
 
         <h1>
 
-          <span style = "padding: 10px; margin: 12px; background-color: #1682ca; color: #ffffff; border-radius: 1px;">Welcome to Mart OS!</span>
+          <span class="welcome-title">Welcome to Mart OS!</span>
     
         </h1>
 
-        <h2 style="margin: 25px; color: #000000;">Hello and Welcome to Mart OS!</h2>
+        <h2 class="welcome-subtitle">Hello and Welcome to Mart OS!</h2>
 
-        <p style="color: #000000; margin: 40px; margin-top: 0px; line-height: 25px;">Mart OS is a web broswer based Operting System themed around the blue waterimp from Roblox Nullscape, Mart!<br>
+        <p class="welcome-text">
+          Mart OS is a web broswer based Operting System themed around the blue waterimp from Roblox Nullscape, Mart!<br><br>
           Consider checking the game out in your free time!
         </p>
 
-        <img style="margin: 10px; width: 344px; height: 258px; border-radius: 25px; object-fit: cover; display: block; margin: 10px auto;" src="./images/Mart Approved.jpg" />
-
-        <!-- <a href="https://music.youtube.com/playlist?list=PLeVbx9Mtz5yQ&si=DfFYGKpXKwi9wQM9">check out my playlist?</a> -->
-
-        <!-- <p style="color:deepskyblue"> This text is blue </p> -->
+        <img class="welcome-image" src="./images/Mart Approved.jpg">
 
       </div>
 
     </div>
 
-    <div">
+    <!-- ||||||| -->
+    <!--  Notes  -->
+    <!-- ||||||| -->
 
-      <!--<p style="color: #fff">Mart OS</p>-->
-      <p id="timeElement" style="position: absolute; bottom: 10px; right: 10px; color: #fff; display: flex; justify-content: flex-end; align-self: flex-end;">
+    <div class="notes-open" id="notesopen">
+
+      
+
+    </div>
+
+    <div>
+
+      <p class="time-element" id="timeElement">
 
         <span id="timePart"></span>
         <span id="datePart"></span>
@@ -59,7 +80,7 @@
 
   <head>
 
-    <script type="module" src="script.js"></script>
+    <!--<script type="module" src="script.js"></script>-->
 
     <link rel="stylesheet" href="style.css" />
 

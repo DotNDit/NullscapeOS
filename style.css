@@ -11,24 +11,82 @@
     overflow: hidden;
 }
 
-.timeElement {
+/*  |||||||
+      Time
+    |||||||  */
+
+.time-element {
+
+    position: absolute;
     
     display: flex;
-    
+    justify-content: flex-end;
+    align-self: flex-end;
+    flex-direction: column;
     flex-wrap: wrap;
+
+    text-align: right;
+
+    right: 10px;
+    bottom: 10px;
+
+    color:  white;
+
+    font-size: 12px;
 }
 
-.window {
+/*  |||||||
+    Welcome
+    |||||||  */  
 
-    display: grid;
+.welcome-open {
 
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    height: 65px;
+    width: 52px;
+
+    margin-left: 5px;
+    margin-top: 15px;
+
+    background-color: rgba(255, 0, 0, 0);
+    color: #fff;
+
+    cursor: pointer;
+}
+
+.welcome-open-image {
+
+    display: flex;
+    justify-content: center;
+
+    display: block;
+
+    border-style: solid;
+    border-radius: 15px;
+    border-color: black;
+    border-width: 1px;
+
+    height: 50px;
+    width: 50px;
+
+    object-fit: cover;
+}
+
+.welcome-app-name {
+
+    margin-top: 2px;
+
+    font-size: 12px;
+}
+
+.welcome-window {
 
     position: absolute;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 
+    display: flex;
     flex-direction: column;
 
     top: 50%;
@@ -50,15 +108,12 @@
     box-sizing: border-box;
 }
 
-.openbutton {
+.welcome-close {
 
-    cursor: pointer;
+    display: flex;
 
-    color: white;
-
-}
-
-.closebutton {
+    justify-content: center;
+    align-items: center;
 
     border-radius: 25px;
 
@@ -68,6 +123,120 @@
     margin: 5px;
 
     background-color: red;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+.welcome-hide {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 25px;
+
+    height: 20px;
+    width: 20px;
+
+    margin: 5px;
+    margin-left: 0px;
+
+    background-color: rgb(255, 255, 155);
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+.welcome-header {
+
+    display: flex;
+    flex-direction: row;
+
+    border-radius: 15px;
+
+    height: 30px;
+    width: 720px;
+
+    padding: 1px;
+    margin: 5px;
+
+    background-color: #fff;
+}
+
+.welcome-content {
+
+    border: solid;
+    border-radius: 25px;
+
+    height: 540px;
+    width: 720px;
+
+    margin: 5px;
+
+    background-color: #fff;
+
+    z-index: 1;
+}
+
+.welcome-title {
+
+    border-radius: 20px;
+
+    padding: 10px;
+    margin: 12px;
+
+    color: #fff;
+
+    background-color: #1682ca;
+}
+
+.welcome-subtitle {
+
+    margin: 25px;
+
+    color: #000;
+}
+
+.welcome-text {
+
+    margin: 40px;
+    margin-top: 0px;
+
+    color: #000;
+}
+
+.welcome-image {
+
+    display: block;
+
+    border-radius: 25px;
+
+    height: 258px;
+    width: 344px;
+
+    margin: auto;
+
+    object-fit: cover;
+}
+
+/*  |||||||
+     Notes
+    |||||||  */
+
+.notes-open {
+
+    height: 65px;
+    width: 52px;
+
+    margin-left: 5px;
+    margin-top: 15px;
+
+    background-color: rgba(255, 0, 0, 1);
+    color: #fff;
 
     cursor: pointer;
 }
