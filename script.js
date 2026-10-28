@@ -1,3 +1,7 @@
+/*  |||||||
+      Time
+    |||||||  */
+
 setInterval(function() {
 
     document.querySelector("#timePart").innerHTML = new Date().toLocaleString([], {
@@ -13,7 +17,12 @@ setInterval(function() {
 
 }, 1000);
 
+/*  |||||||
+      Drag
+    |||||||  */
+
 dragElement(document.getElementById("welcomewindow"));
+dragElement(document.getElementById("noteswindow"));
 
 function dragElement(element) {
     let initialX = 0;
@@ -68,59 +77,127 @@ function dragElement(element) {
     }
 }
 
-/*
-var welcomeScreen = document.querySelector("#welcomewindow");
+/*  ||||||||||||||
+     Open & Close
+    ||||||||||||||  */
+
+document.addEventListener("click", function(e) {
+    if(e.target.closest("#welcomeopen") || e.target.closest("#welcomeclose") || e.target.closest("#welcomehide")) {
+        handleOpenClose(document.getElementById("welcomewindow"), e);
+    }
+    else if(e.target.closest("#notesopen") || e.target.closest("#notesclose") || e.target.closest("#noteshide")) {
+        handleOpenClose(document.getElementById("noteswindow"), e);
+    }
+});
+
+var welcomeHide = 0;
+var notesHide = 0;
+
+function handleOpenClose(element, click){
+    let openButton = element.id.replace("window", "open");
+    let closeButton = element.id.replace("window", "close");
+    let hideButton = element.id.replace("window", "hide");
+
+    let hide = element.id.replace("window", "") + "Hide";
+    let hideWindow = window[hide];
+
+    if(click.target.closest("#" + openButton)){
+        if(hideWindow === 1){
+            unhideWindow(element)
+        }
+        else if(hideWindow === 0){
+            openWindow(element)
+        }
+    }
+    else if(click.target.closest("#" + closeButton)) {
+        hideWindow = 0;
+        closeWindow(element);
+    }
+    else if(click.target.closest("#" + hideButton)) {
+        hideWindow = 1;
+        closeWindow(element);
+    }
+
+    window[hide] = hideWindow;
+}
 
 function closeWindow(element) {
-  element.style.display = "none";
+    element.style.display = "none";
 }
 
 function openWindow(element) {
-  element.style.display = "flex";
 
-  element.style.top = "50%";
-  element.style.left = "50%";
-  element.style.tranform = "trans(-50%, -50%)"
-}
+    let topBar = document.getElementById(element.id.replace("window", "header"));
 
-function reOpenWindow(element) {
     element.style.display = "flex";
+    element.style.top = "50%";
+    element.style.left = "50%";
+    element.style.transform = "translate(-50%, -50%)";
+
+    biggestIndex++;
+    element.style.zIndex = biggestIndex;
+    topBar.style.zIndex = biggestIndex + 1;
 }
 
-var welcomeScreenClose = document.querySelector("#welcomeclose");
-var welcomeScreenOpen = document.querySelector("#welcomeopen");
+function unhideWindow(element) {
+    element.style.display = "flex";
 
-welcomeScreenClose.addEventListener("click", function(){
-    closeWindow(welcomeScreen);
-});
+    biggestIndex++;
+    element.style.zIndex = biggestIndex;
+    topBar.style.zIndex = biggestIndex + 1;
+}
 
-welcomeScreenOpen.addEventListener("click", function(){
-    openWindow(welcomeScreen);
-};
+/* ||||||||
+    Select
+   ||||||||  */
+
+//       pls do as feature
+/*
+let selectedIcon = undefined;
+
+function selectIcon(element) {
+
+    element.classList.add("selected");
+
+    selectedIcon = element;
+}
+
+function deselectIcon(element) {
+
+    element.classList.remove("selected")
+
+    selectedIcon = undefined;
+}
+
+function handleIconTap(element) {
+    if(element.classList.contains("selected")){
+
+        deselectIcon(element);
+
+        openWindow(window);
+    }
+    else {
+        selectIcon(element);
+    }
+}
 */
+/*  |||||||||
+     Z-Index
+    |||||||||  */
 
-let welcomeHide = 0;
+let biggestIndex = 1;
 
-document.addEventListener("click", function(e) {
+function addWindowTapHandling(element) {
+    element.addEventListener("mousedown", () =>
+        handleWindowTap(element)
+    )
+}
 
-    let welcome = document.getElementById('welcomewindow');
-    
+function handleWindowTap(element) {
 
-    if(e.target.closest('#welcomeopen')){
-        if(welcomeHide === 0){
-            welcome.style.top = "50%";
-            welcome.style.left = "50%";
-            welcome.style.transform = "translate(-50%, -50%)";
-        }
-        
-        welcome.style.display = 'flex';
-    }
-    else if(e.target.closest('#welcomeclose')) {
-        welcomeHide = 0;
-        welcome.style.display = 'none';
-    }
-    else if(e.target.closest('#welcomehide')) {
-        welcomeHide = 1;
-        welcome.style.display = 'none';
-    }
-});
+    let topBar = document.getElementById(element.id.replace("window", "header"));
+
+    biggestIndex++;
+    element.style.zIndex = biggestIndex;    
+    topBar.style.zIndex = biggestIndex + 1;
+}

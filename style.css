@@ -41,22 +41,24 @@
 
 .welcome-open {
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
     height: 65px;
     width: 52px;
 
     margin-left: 5px;
     margin-top: 15px;
 
-    background-color: rgba(255, 0, 0, 0);
+    background-color: rgba(255, 0, 0, 1);
     color: #fff;
 
     cursor: pointer;
 }
 
-.welcome-open-image {
-
-    display: flex;
-    justify-content: center;
+.welcome-app {
 
     display: block;
 
@@ -69,11 +71,14 @@
     width: 50px;
 
     object-fit: cover;
+
+    user-select: none;
 }
 
 .welcome-app-name {
 
     margin-top: 2px;
+    margin-bottom: 0px;
 
     font-size: 12px;
 }
@@ -96,7 +101,7 @@
 
     border: solid;
     border-radius: 25px;
-    border-color: rgb(0, 0, 0);
+    border-color: rgba(0, 225, 255, 0.20);
 
     height: 600px;
     width: 750px;
@@ -115,7 +120,10 @@
     justify-content: center;
     align-items: center;
 
+    border: solid;
     border-radius: 25px;
+    border-width: 2px;
+    border-color: black;
 
     height: 20px;
     width: 20px;
@@ -136,7 +144,10 @@
     justify-content: center;
     align-items: center;
 
+    border: solid;
     border-radius: 25px;
+    border-width: 2px;
+    border-color: black;
 
     height: 20px;
     width: 20px;
@@ -154,6 +165,7 @@
 .welcome-header {
 
     display: flex;
+    align-items: center;
     flex-direction: row;
 
     border-radius: 15px;
@@ -169,8 +181,7 @@
 
 .welcome-content {
 
-    border: solid;
-    border-radius: 25px;
+    border-radius: 20px;
 
     height: 540px;
     width: 720px;
@@ -229,6 +240,11 @@
 
 .notes-open {
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
     height: 65px;
     width: 52px;
 
@@ -239,4 +255,141 @@
     color: #fff;
 
     cursor: pointer;
+}
+
+.notes-app {
+
+    display: block;
+
+    border-style: solid;
+    border-radius: 15px;
+    border-color: black;
+    border-width: 1px;
+
+    height: 50px;
+    width: 50px;
+
+    object-fit: cover;
+
+    user-select: none;
+}
+
+.notes-app-name {
+
+    margin-top: 2px;
+    margin-bottom: 0px;
+
+    font-size: 12px;
+}
+
+.notes-window {
+
+    position: absolute;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    display: flex;
+    flex-direction: column;
+
+    display: none;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border: solid;
+    border-radius: 25px;
+    border-color: rgba(0, 225, 255, 0.20);
+
+    height: 500px;
+    width: 400px;
+
+    padding: 5px;
+
+    background-color: rgba(0, 225, 255, 0.25);
+    backdrop-filter: blur(5px);
+    box-sizing: border-box;
+}
+
+.notes-header {
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    border-radius: 15px;
+
+    height: 30px;
+    width: 370px;
+
+    padding: 1px;
+    margin: 5px;
+
+    background-color: #fff;
+}
+
+.notes-close {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: solid;
+    border-radius: 25px;
+    border-width: 2px;
+    border-color: black;
+
+    height: 20px;
+    width: 20px;
+
+    margin: 5px;
+
+    background-color: red;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+.notes-hide {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: solid;
+    border-radius: 25px;
+    border-width: 2px;
+    border-color: black;
+
+    height: 20px;
+    width: 20px;
+
+    margin: 5px;
+    margin-left: 0px;
+
+    background-color: rgb(255, 255, 155);
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+.notes-content {
+
+    border-radius: 20px;
+
+    height: 450px;
+    width: 374px;
+
+    margin: 5px;
+
+    background-color: #fff;
+
+    z-index: 1;
 }
